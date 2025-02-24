@@ -2,12 +2,12 @@ if status is-interactive
 	# Commands to run in interactive sessions can go here
 
 	#ALIAS
-	alias tree='eza -ls ext --icons --tree'
-	alias ls='eza -ls ext --icons'
+	alias tree='eza -ls type --icons --tree'
+	alias ls='eza -s type --icons'
+	alias ll='eza -ls type --icons'
     alias vim='nvim'
     alias rmatrix='rusty-rain -C green -H 255,255,255 -c alphalow -s'
     alias zj='zellij'
-
 
 	# Nightfox Color Palette
 	# Style: carbonfox
@@ -55,8 +55,10 @@ if status is-interactive
 
     # Set global variables
     set -gx EDITOR nvim
-    set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
-
+    set -gx TERM ghostty
+    set -gx BAT_THEME "base16"
+    set -gx MANPAGER "less -M -R -i --use-color -Dd+R -Du+B -DHkC -j5"
+    set -gx MANROFFOPT "-c"
 end
 
 zoxide init --cmd cd fish | source
@@ -65,3 +67,13 @@ zoxide init --cmd cd fish | source
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# yazi
+function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		builtin cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+end
