@@ -1,6 +1,31 @@
 [user]
-	email = purin213@hotmail.com
-	name = Christian Prentice
+	email = purin21345@gmail.com
+	name = Christian Taro Prentice
+[column]
+    ui = auto
+[branch]
+    sort = -commiterdate
+[tag]
+    sort = version:refname
+[diff]
+        algorithm = histogram
+        colorMoved = plain
+        mnemonicPrefix = true
+        renames = true
+[push]
+        default = simple
+        autoSetupRemote = true
+        followTags = true
+[fetch]
+        prune = true
+        pruneTags = true
+        all = true
+[help]
+        autocorrect = prompt
+[commit]
+        verbose = true
+
+# delta stuff
 
 [core]
     pager = delta
