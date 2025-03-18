@@ -10,8 +10,8 @@ font pango: 0xProto Medium 16
 default_border pixel 1
 hide_edge_borders smart
 
-set $repeat_delay 100
-set $repeat_rate 20
+set $repeat_delay 50
+set $repeat_rate 5
 
 ### Variables
 #
@@ -26,6 +26,9 @@ set $right l
 # Your preferred terminal emulator
 set $term ghostty
 
+# Your preferred browser
+set $browser brave-browser
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -36,6 +39,7 @@ set $menu wofi --show
 
 ### Output configuration
 output * bg /home/CP/Pictures/Wallpapers/alligator.jpg fill
+exec_always /home/CP/Tools/swayrc/sway/clamshell-mode.sh
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg
 
@@ -87,7 +91,7 @@ exec swayidle -w
     bindsym $mod+d exec $menu
 
     # Start the browser
-    #bindsym $mod+q exec $brave-browser-nightly
+    bindsym $mod+b exec $browser
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -225,4 +229,3 @@ bar {
 }
 
 include /etc/sway/config.d/*
-
