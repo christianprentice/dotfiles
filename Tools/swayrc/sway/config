@@ -27,7 +27,7 @@ set $right l
 set $term ghostty
 
 # Your preferred browser
-set $browser brave-browser
+set $browser brave-browser-beta
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -91,7 +91,7 @@ exec swayidle -w
     bindsym $mod+d exec $menu
 
     # Start the browser
-    bindsym $mod+b exec $browser
+    bindsym $mod+Shift+b exec $browser
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
