@@ -1,6 +1,9 @@
 if status is-interactive
 	# Commands to run in interactive sessions can go here
 
+    fish_vi_key_bindings
+    set -g fish_cursor_default block
+
 	#ALIAS
 	alias tree='eza -ls type --icons --tree'
 	alias ls='eza -s type --icons'
@@ -44,8 +47,6 @@ if status is-interactive
 	set -g fish_pager_color_prefix $cyan
 	set -g fish_pager_color_completion $foreground
 	set -g fish_pager_color_description $comment
-
-    fish_vi_key_bindings
 
     # Go path
     # set -Ux fish_user_paths /usr/local/go/bin $fish_user_paths

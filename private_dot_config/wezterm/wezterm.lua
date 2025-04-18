@@ -15,6 +15,7 @@ config.default_prog = { '/usr/bin/fish', '-l' }
 -- Font config
 config.font = wezterm.font("0xProto")
 config.font_size = 16.0
+config.default_cursor_style = 'SteadyBlock'
 
 -- and finally, return the configuration to wezterm
 return config
