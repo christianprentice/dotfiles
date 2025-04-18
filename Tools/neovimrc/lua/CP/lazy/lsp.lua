@@ -29,6 +29,7 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "gopls",
+                "phpactor",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -46,6 +47,19 @@ return {
                             Lua = {
                                 diagnostics = {
                                     globals = { "vim", "it", "describe", "before_each", "after_each" },
+                                }
+                            }
+                        }
+                    }
+                end,
+                ["phpactor"] = function ()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.phpactor.setup {
+                        root_dir = require('lspconfig.util').root_pattern('composer.json', '.git'),
+                        settings = {
+                            phpactor = {
+                                languageServer = {
+                                    enabled = true,
                                 }
                             }
                         }
@@ -72,8 +86,8 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
             }, {
-                { name = 'buffer' },
-            })
+                    { name = 'buffer' },
+                })
         })
 
         vim.diagnostic.config({

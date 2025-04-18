@@ -1,4 +1,3 @@
-
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
@@ -19,4 +18,3 @@ config.font_size = 16.0
 
 -- and finally, return the configuration to wezterm
 return config
-
