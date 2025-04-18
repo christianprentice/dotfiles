@@ -1,14 +1,14 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>nt", function ()
-    vim.cmd("Neotree")
-end)
+vim.keymap.set("n", "<leader>nt", ":Neotree toggle<CR>", {
+    desc = 'Toggle Neotree file explorer'
+})
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
-vim.keymap.set("n", "<leader>ter", function()
-    vim.cmd("terminal")
-end)
+vim.keymap.set("n", "<leader>ter", ":terminal<CR>", {
+    desc = 'Open terminal'
+})
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -52,8 +52,6 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
-
-
+vim.keymap.set("n", "<leader><leader>", "so<CR>", {
+    desc = 'source current file'
+})
