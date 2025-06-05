@@ -1,3 +1,3 @@
 ### init.lua
 This is my new RC.
-A lot of this is copied from theprimeagens dotfiles
+A little bit of a neovim bonsai.

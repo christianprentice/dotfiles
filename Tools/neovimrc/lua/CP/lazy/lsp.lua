@@ -1,3 +1,4 @@
+-- TODO: Refactor and tidy up
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -20,7 +21,8 @@ return {
             "force",
             {},
             vim.lsp.protocol.make_client_capabilities(),
-            cmp_lsp.default_capabilities())
+            cmp_lsp.default_capabilities()
+        )
 
         require("fidget").setup({})
         require("mason").setup()
