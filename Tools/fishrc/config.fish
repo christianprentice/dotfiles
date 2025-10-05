@@ -9,7 +9,7 @@ if status is-interactive
 	alias ls='eza -s type --icons'
 	alias ll='eza -ls type --icons'
     alias vim='nvim'
-    alias rmatrix='rusty-rain -C green -H 255,255,255 -c alphalow -s'
+    alias rmatrix='rusty-rain -C green -H 255,255,255 -g alphalow -s'
     alias zj='zellij'
 
 	# Nightfox Color Palette
