@@ -4,7 +4,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-font pango: 0xProto Medium 16
+font pango: 0xProto Medium 12
 
 # Border setting
 default_border pixel 1
