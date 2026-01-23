@@ -52,6 +52,7 @@ exec_always /home/CP/Tools/swayrc/sway/clamshell-mode.sh
 
 ### Idle configuration
 exec swayidle -w
+exec fcitx5
 # Example configuration:
 #
 # exec swayidle -w \
