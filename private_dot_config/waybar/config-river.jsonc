@@ -20,6 +20,7 @@
         "format": "{name}",
         "focus-on-click": true,
 		"disable-scroll": true,
+        "hide-vacant": true,
         "num-tags": 10
     },
 
