@@ -3,6 +3,7 @@ if status is-interactive
 
     fish_vi_key_bindings
     set -g fish_cursor_default block
+    set -g fish_cursor_insert block
 
 	#ALIAS
 	alias tree='eza -ls type --icons --tree'
