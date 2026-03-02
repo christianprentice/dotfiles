@@ -4,17 +4,17 @@ This settings are aimed at GNU/Linux (specificaly rpm based machines)
 
 ## 🖥️ System Overview
 This system settings include:
-    Essential dev tools:
-    - **Shell:** [Fish](https://fishshell.com/)
-    - **Terminals:** [Ghostty](https://ghostty.org/), [WezTerm](https://wezfurlong.org/wezterm/)
-    - **Multiplexer:** [Zellij](https://zellij.dev/)
-    - **Editor:** [Neovim](https://neovim.io/) (config in `~/.config/nvim`)
+Essential dev tools:
+- **Shell:** [Fish](https://fishshell.com/)
+- **Terminals:** [Ghostty](https://ghostty.org/), [WezTerm](https://wezfurlong.org/wezterm/)
+- **Multiplexer:** [Zellij](https://zellij.dev/)
+- **Editor:** [Neovim](https://neovim.io/) (config in `~/.config/nvim`)
 
-    Sway environment configurations:
-    - **Window Manager:** [Sway](https://swaywm.org/)
-    - **Status Bar:** [Waybar](https://github.com/Alexays/Waybar)
-    - **Launcher:** [Wofi](https://hg.sr.ht/~scoopta/wofi)
-    - **Idle Daemon:** [Swayidle](https://github.com/swaywm/swayidle)
+Sway environment configurations:
+- **Window Manager:** [Sway](https://swaywm.org/)
+- **Status Bar:** [Waybar](https://github.com/Alexays/Waybar)
+- **Launcher:** [Wofi](https://hg.sr.ht/~scoopta/wofi)
+- **Idle Daemon:** [Swayidle](https://github.com/swaywm/swayidle)
 
 ## 🛠️ Installation
 These dotfiles are managed by `chezmoi`. To apply them to a new system:
@@ -23,7 +23,7 @@ These dotfiles are managed by `chezmoi`. To apply them to a new system:
 
 2. **Initialize and apply:**
    ```bash
-   chezmoi init --apply https://github.com/CP-prentice/dotfiles.git
+   chezmoi init --apply https://github.com/christianprentice/dotfiles.git
    ```
 
 ## 🚀 Highlights
