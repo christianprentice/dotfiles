@@ -9,5 +9,5 @@ cursor-opacity = 0.8
 cursor-style = block
 cursor-style-blink = false
 
-font-family = 0xProto
+font-family = 0xProto-custom
 font-size = 16

@@ -6,9 +6,9 @@ if status is-interactive
     set -g fish_cursor_insert block
 
 	#ALIAS
-	alias tree='eza -ls type --icons --tree'
 	alias ls='eza -s type --icons'
 	alias ll='eza -ls type --icons'
+	alias tree='eza -Tls type --icons'
     alias vim='nvim'
     alias rmatrix='rusty-rain -C green -H 255,255,255 -g alphalow -s'
     alias zj='zellij'
@@ -65,20 +65,9 @@ end
 
 zoxide init --cmd cd fish | source
 
-
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
-
-# yazi
-function y
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	yazi $argv --cwd-file="$tmp"
-	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-		builtin cd -- "$cwd"
-	end
-	rm -f -- "$tmp"
-end
 
 # pnpm
 set -gx PNPM_HOME "/home/CP/.local/share/pnpm"

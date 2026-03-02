@@ -4,10 +4,17 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-font pango: 0xProto Medium 12
+font pango: 0xProto-custom Medium 12
 
-# Border setting
+# Border settings
+set $white #f2f4f8
+set $black #0c0c0c
+set $gray  #8c8e90
+set $blue  #6ba9ff
 default_border pixel 1
+# class	                border background text indicator child_border
+client.focused          $gray $gray $black $white
+client.focused_inactive $black $black $white $black
 hide_edge_borders smart
 
 set $repeat_delay 50
@@ -38,8 +45,8 @@ set $browser brave-browser-beta
 set $menu wofi --show
 
 ### Output configuration
-output * bg /home/CP/Pictures/Wallpapers/alligator.jpg fill
-exec_always /home/CP/Tools/swayrc/sway/clamshell-mode.sh
+output * bg $HOME/Pictures/Wallpapers/alligator.jpg fill
+exec_always $HOME/.config/sway/clamshell-mode.sh
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg
 

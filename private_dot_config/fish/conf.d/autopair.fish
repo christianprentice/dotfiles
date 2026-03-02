@@ -1,8 +1,8 @@
 status is-interactive || exit
 
-set --global autopair_left "(" "[" "{" '"' "'"
-set --global autopair_right ")" "]" "}" '"' "'"
-set --global autopair_pairs "()" "[]" "{}" '""' "''"
+set --global autopair_left "(" "[" "{" '"' "'" "`"
+set --global autopair_right ")" "]" "}" '"' "'" "`"
+set --global autopair_pairs "()" "[]" "{}" '""' "''" "``"
 
 function _autopair_fish_key_bindings --on-variable fish_key_bindings
     set --query fish_key_bindings[1] || return
