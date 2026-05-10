@@ -1,6 +1,7 @@
 theme = /usr/share/ghostty/themes/Carbonfox
 
 window-decoration = false
+keybind = clear
 
 shell-integration-features = no-cursor
 

@@ -1,4 +1,3 @@
--- TODO: Refactor and tidy up
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -25,22 +24,28 @@ return {
         )
 
         require("fidget").setup({})
-        require("mason").setup()
+        require("mason").setup({
+            opts = {
+                ui = {
+                    icons = {
+                        package_installed = "✓",
+                        package_pending = "➜",
+                        package_uninstalled = "✗"
+                    }
+                }
+            }
+        })
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
-                "rust_analyzer",
                 "gopls",
-                "phpactor",
             },
             handlers = {
-                function(server_name) -- default handler (optional)
-
+                function(server_name)
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities
                     }
                 end,
-
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
@@ -54,19 +59,6 @@ return {
                         }
                     }
                 end,
-                ["phpactor"] = function ()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.phpactor.setup {
-                        root_dir = require('lspconfig.util').root_pattern('composer.json', '.git'),
-                        settings = {
-                            phpactor = {
-                                languageServer = {
-                                    enabled = true,
-                                }
-                            }
-                        }
-                    }
-                end,
             }
         })
 
@@ -75,7 +67,7 @@ return {
         cmp.setup({
             snippet = {
                 expand = function(args)
-                    require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+                    require('luasnip').lsp_expand(args.body)
                 end,
             },
             mapping = cmp.mapping.preset.insert({
@@ -85,15 +77,16 @@ return {
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
-                { name = 'nvim_lsp' },
-                { name = 'luasnip' }, -- For luasnip users.
-            }, {
+                    { name = 'nvim_lsp' },
+                    { name = 'luasnip' },
+                },
+                {
                     { name = 'buffer' },
-                })
+                }
+            )
         })
 
         vim.diagnostic.config({
-            -- update_in_insert = true,
             float = {
                 focusable = false,
                 style = "minimal",
