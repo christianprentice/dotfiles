@@ -8,9 +8,8 @@ if status is-interactive
 	#ALIAS
 	alias ls='eza -s type --icons'
 	alias ll='eza -ls type --icons'
+	alias la='eza -las type --icons'
 	alias tree='eza -Tls type --icons'
-    alias vim='nvim'
-    alias rmatrix='rusty-rain -C green -H 255,255,255 -g alphalow -s'
     alias zj='zellij'
 
 	# Nightfox Color Palette
@@ -45,9 +44,9 @@ if status is-interactive
 
 	# Completion Pager Colors
 	set -g fish_pager_color_progress $comment
-	set -g fish_pager_color_prefix $cyan
 	set -g fish_pager_color_completion $foreground
-	set -g fish_pager_color_description $comment
+	set -g fish_pager_color_prefix $cyan --bold
+	set -g fish_pager_color_description $pink --italics
 
     # Go path
     # set -Ux fish_user_paths /usr/local/go/bin $fish_user_paths
