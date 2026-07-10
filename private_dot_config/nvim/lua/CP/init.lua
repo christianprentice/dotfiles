@@ -23,8 +23,8 @@ autocmd('TextYankPost', {
 
 vim.filetype.add({
     extension = {
-        templ = 'templ',
-    }
+        yml = "yaml.ansible"
+    },
 })
 
 autocmd({"BufWritePre"}, {

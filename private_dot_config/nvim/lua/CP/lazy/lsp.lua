@@ -39,6 +39,8 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "gopls",
+                "dockerls",
+                "ansiblels",
             },
             handlers = {
                 function(server_name)
