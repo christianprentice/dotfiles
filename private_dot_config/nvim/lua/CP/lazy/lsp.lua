@@ -14,7 +14,7 @@ return {
     },
 
     config = function()
-        local cmp = require('cmp')
+        -- 1. CAPABILITIES & UI
         local cmp_lsp = require("cmp_nvim_lsp")
         local capabilities = vim.tbl_deep_extend(
             "force",
@@ -24,6 +24,8 @@ return {
         )
 
         require("fidget").setup({})
+
+        -- 2. MASON & LSP CONFIGURATION
         require("mason").setup({
             opts = {
                 ui = {
@@ -35,6 +37,7 @@ return {
                 }
             }
         })
+
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
@@ -43,11 +46,14 @@ return {
                 "ansiblels",
             },
             handlers = {
+                -- Default handler for all servers
                 function(server_name)
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities
                     }
                 end,
+
+                -- Dedicated handler for lua_ls
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
@@ -64,6 +70,8 @@ return {
             }
         })
 
+        -- 3. AUTOCOMPLETION (nvim-cmp)
+        local cmp = require('cmp')
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
@@ -79,15 +87,14 @@ return {
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
-                    { name = 'nvim_lsp' },
-                    { name = 'luasnip' },
-                },
-                {
-                    { name = 'buffer' },
-                }
-            )
+                { name = 'nvim_lsp' },
+                { name = 'luasnip' },
+            }, {
+                { name = 'buffer' },
+            })
         })
 
+        -- 4. DIAGNOSTICS UI
         vim.diagnostic.config({
             float = {
                 focusable = false,

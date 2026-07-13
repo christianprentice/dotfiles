@@ -1,30 +1,29 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>oi", "<CMD>Oil<CR>", {
-    desc = 'Open Oil'
-})
-vim.keymap.set("i", "<C-c>", "<Esc>")
-vim.keymap.set("n", "<leader>w", vim.cmd.w)
-vim.keymap.set("n", "<leader>q", vim.cmd.q)
-vim.keymap.set("n", "<leader>ter", ":terminal<CR>", {
-    desc = 'Open terminal within vim session'
-})
+-- CORE
+vim.keymap.set("n", "<leader>w", vim.cmd.w, { desc = "Save file" })
+vim.keymap.set("n", "<leader>q", vim.cmd.q, { desc = "Quit" })
+vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Exit insert mode safely" })
+vim.keymap.set("n", "<leader>ter", ":terminal<CR>", { desc = "Open terminal within vim session" })
 
--- nice visual mode movements
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- NAVIGATION & CENTERING
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Page down and center" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Page up and center" })
+vim.keymap.set("n", "n", "nzzzv", { desc = "Next search match and center" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Prev search match and center" })
 
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+-- TEXT MANIPULATION
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
+-- Join line below without moving cursor
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line below" })
 
--- pasty things
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
-vim.keymap.set("n", "<leader>P", [["+P]])
---
+-- CLIPBOARD (System)
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank to system clipboard" })
+vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]], { desc = "Paste from system clipboard" })
+vim.keymap.set("n", "<leader>P", [["+P]], { desc = "Paste before from system clipboard" })
 
-vim.keymap.set("n", "<leader>for", vim.lsp.buf.format)
+-- PLUGINS & LSP (Global)
+vim.keymap.set("n", "<leader>oi", "<CMD>Oil<CR>", { desc = "Open Oil" })
+vim.keymap.set("n", "<leader>for", vim.lsp.buf.format, { desc = "Format buffer" })
