@@ -1,37 +1,45 @@
 [user]
-	email = purin21345@gmail.com
+	email = chrstnprntc@icloud.com
 	name = Christian Taro Prentice
-[column]
-    ui = auto
+
+[core]
+    pager = delta
+    editor = nvim
+[help]
+    autocorrect = prompt
+[init]
+    defaultBranch = main
+
 [branch]
     sort = -committerdate
 [tag]
     sort = version:refname
-[diff]
-        algorithm = histogram
-        colorMoved = plain
-        mnemonicPrefix = true
-        renames = true
-[push]
-        default = simple
-        autoSetupRemote = true
-        followTags = true
-[fetch]
-        prune = true
-        pruneTags = true
-        all = true
-[help]
-        autocorrect = prompt
-[commit]
-        verbose = true
+[column]
+    ui = auto
 
-# pager/diff settings
-[core]
-    pager = delta
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+[commit]
+    verbose = true
+[merge]
+    conflictstyle = zdiff3
+
+[push]
+    default = simple
+    autoSetupRemote = true
+    followTags = true
+[pull]
+    rebase = true
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+
 [interactive]
     diffFilter = delta --color-only
 [delta]
     navigate = true  # use n and N to move between diff sections
     dark = true      # or light = true, or omit for auto-detection
-[merge]
-    conflictstyle = zdiff3
