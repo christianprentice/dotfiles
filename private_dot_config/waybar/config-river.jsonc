@@ -9,7 +9,7 @@
 	],
 	"modules-right": [
         "network",
-        "network@wired",
+        "network#wired",
 		"pulseaudio",
 		"memory",
 		"cpu",
@@ -34,6 +34,7 @@
         "interface": "wl*",
         "format-wifi": " ",
         "format-ethernet": " ",
+        "format-disconnected": "",
         "tooltip-format-wifi": "{essid}  {ifname}",
         "tooltip-format-ethernet": "{ifname}"
     },
