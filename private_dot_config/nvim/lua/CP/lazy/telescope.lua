@@ -16,6 +16,6 @@ return {
         vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find file' })
         vim.keymap.set('n', '<leader>frg', builtin.live_grep, { desc = 'Telescope live grep' })
         vim.keymap.set('n', '<leader>fgit', builtin.git_files, { desc = 'Telescope find files in git' })
-        vim.keymap.set('n', '<leader>fh', builtin.find_files, { desc = 'Telescope help tags' })
+        vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
     end
 }

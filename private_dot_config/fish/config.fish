@@ -52,7 +52,7 @@ if status is-interactive
     # set -Ux fish_user_paths /usr/local/go/bin $fish_user_paths
     set -x GOPATH (go env GOPATH)
     set -x PATH $PATH (go env GOPATH)/bin
-    set PATH $PATH ~/.cargo/bin
+    set -gx PATH $PATH ~/.cargo/bin
 
     # Set global variables
     set -gx EDITOR nvim
@@ -69,7 +69,7 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 # pnpm
-set -gx PNPM_HOME "/home/CP/.local/share/pnpm"
+set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end

@@ -8,6 +8,8 @@
         "clock"
 	],
 	"modules-right": [
+        "network",
+        "network@wired",
 		"pulseaudio",
 		"memory",
 		"cpu",
@@ -26,9 +28,17 @@
     },
 
     "network": {
-        "format-wifi": "  {essid}",
-        "format-ethernet": " {ifname}",
-        "format-disconnected": ""
+        "interface": "wl*",
+        "format-wifi": " ",
+        "format-ethernet": " ",
+        "tooltip-format-wifi": "{essid}  {ifname}",
+        "tooltip-format-ethernet": "{ifname}"
+    },
+    "network@wired": {
+        "interface": "en*",
+        "format-ethernet": " ",
+        "format-disconnected": "",
+        "tooltip-format-ethernet": "{ifname}"
     },
     "pulseaudio": {
         "format": "{icon} {volume:2}%",
@@ -36,7 +46,7 @@
         "format-muted": "",
         "format-icons": {
 			"headphones": "",
-            "default": ["", "", ""]
+            "default": ["", ""]
         },
 		"scroll-step": 5,
 		"on-click": "pamixer -t",

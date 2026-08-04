@@ -38,8 +38,7 @@ These dotfiles are managed by `chezmoi`. To apply them to a new system:
 
 ### Scripts
 Located in `~/Scripts/`:
-- `install-0xProto-custom-fonts.sh`: Installs (0xProto-custom)[https://github.com/christianprentice/0xProto-custom] fonts.
-- `update-system.sh`: A simple dnf system update and cargo-update script.
+- `install-0xProto-custom-fonts.sh`: Installs [0xProto-custom](https://github.com/christianprentice/0xProto-custom) fonts.
 
 ## 🎨 Visuals
 Sway wallpapers are stored in `~/Pictures/Wallpapers/`.

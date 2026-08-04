@@ -12,8 +12,10 @@ vim.opt.wrap = false
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.list = true
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- SEARCH
@@ -23,7 +25,11 @@ vim.opt.incsearch = true
 -- FILES, BACKUP & UNDO
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+
+-- UNDO SETTINGS
+local undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.fn.mkdir(undodir, "p")
+vim.opt.undodir = undodir
 vim.opt.undofile = true
 vim.opt.updatetime = 50
 
